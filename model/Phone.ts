@@ -4,10 +4,12 @@ export default class Phone implements Prototype {
   public ddd: string;
   public number: string;
 
+  constructor(ddd: string, number: string) {
+    this.ddd = ddd;
+    this.number = number;
+  }
+
   public clone(): Prototype {
-    let phone = new Phone();
-    phone.ddd = this.ddd;
-    phone.number = this.number;
-    return phone;
+    return new Phone(this.ddd, this.number);
   }
 }
