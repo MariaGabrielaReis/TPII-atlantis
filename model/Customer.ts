@@ -12,4 +12,10 @@ export default class Customer {
   public documents: Document[] = [];
   public dependents: Customer[] = [];
   public bearer: Customer;
+
+  public clonePhones(): Phone[] {
+    let clonedPhones: Phone[] = [];
+    this.phones.forEach(phone => clonedPhones.push(phone.clone() as Phone));
+    return clonedPhones;
+  }
 }
